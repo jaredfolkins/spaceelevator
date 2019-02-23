@@ -1,0 +1,17 @@
+**/*.log
+**/*.sqlite
+**/*.db
+*.tar.gz
+.swp
+.swo
+.idea/
+.vscode/
+.grifter/
+.env
+.DS_Store
+bin/spaceelevator*
+main
+spaceelevator.tar.gz
+spaceelevator.amd64
+spaceelevator.exe
+spaceelevator.darwin
