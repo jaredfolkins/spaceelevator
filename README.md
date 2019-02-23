@@ -2,6 +2,8 @@
 
 Space Elevator is a visualization tool for exploring elevator algorithms.
 
+![Alt text](https://raw.githubusercontent.com/jaredfolkins/spaceelevator/master/screenshot.png "Space Elevator Simulation")
+
 # What algorithms are available?
 
 Nearest Car (NC): Elevator calls are assigned to the elevator best placed to answer that call according to three criteria that are used to compute a figure of suitability (FS) for each elevator. (1) If an elevator is moving towards a call, and the call is in the same direction, FS = (N + 2) - d, where N is one less than the number of floors in the building, and d is the distance in floors between the elevator and the passenger call. (2) If the elevator is moving towards the call, but the call is in the opposite direction, FS = (N + 1) - d.  (3) If the elevator is moving away from the point of call, FS = 1. The elevator with the highest FS for each call is sent to answer it. The search for the "nearest car" is performed continuously until each call is serviced.
@@ -10,7 +12,7 @@ https://www.quora.com/Is-there-any-public-elevator-scheduling-algorithm-standard
 
 # What is the supported Golang Version?
 
->= 1.11 
+`>= 1.11`
 
 # How do I compile this?
 
@@ -31,11 +33,11 @@ After compilation, you should have a bin folder with three binaries, select the 
 
 ### OSX 64bit
 
-`./bin/ spaceelevator.darwin`
+`./bin/spaceelevator.darwin`
 
 ### Linux 64bit
 
-`./bin/spaceelevator.amd4`
+`./bin/spaceelevator.amd64`
 
 # What should I see?
 
@@ -43,11 +45,11 @@ Space Elevator should automatically open a browser window on port http//localhos
 
 # Why?
 
-I was asked to implement a program that used an elevator algorithm for a job interview and I decided I’d go big. I also really suck at whiteboard challenges. My career has lead me to know a ton of things across many domains in computer science. But it means that I only keep the gist of a solution in my head. I need a reference to read and the ability to do research and explore the problem domain with my fingers and face in front of a computer.
+I was asked to implement a program that used an elevator algorithm for a job interview once and I decided I’d go big. I also really suck at whiteboard challenges. My career has lead me to know a ton of things across many domains in computer science. But it means that I only keep the gist of a solution in my head. I need a reference to read and the ability to do research and explore the problem domain with my fingers and face in front of a computer.
 
-# Isn’t this a lot of extra work?
+# Isn’t this a waste of time?
 
-Yes.
+No.
 
 # Then why’d you do it?
 
