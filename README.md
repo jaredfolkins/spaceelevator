@@ -61,7 +61,7 @@ In this case, if I would have submitted a lesser tool, that would have been abso
 
 And if the interview doesn’t go well it is a complete sunk cost of my time.
 
-So I figured that if I invest a little bit more time upfront, I could create a project that I could use to teach others from. Especially my small children as they approach the age where this interests them. The thinking is that it would have the potential to offer longer term yield. (And it worked! Now I have my two olders wanting to turn this simulation into a game! )
+So I figured that if I invest a little bit more time upfront, I could create a project that I could use to teach others from. Especially my small children as they approach the age where this interests them. The thinking is that it would have the potential to offer longer term yield. And it worked! Now I have my two olders wanting to turn this simulation into a game! :-)
 
 # Why should I learn this?
 
@@ -85,9 +85,9 @@ There are several things that could be improved
 
 ### O(n)
 
-	Some of the seeking functions/methods are not optimized
+	Some of the seeking functions/methods are not optimized.
 
 ### Add more algorithms
 
-	Nuff said
+	It would be cool to explore a few more with my kids.
 
