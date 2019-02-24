@@ -65,7 +65,7 @@ So I figured that if I invest a little bit more time upfront, I could create a p
 
 # Why should I learn this?
 
-Space Elevator is essentially teaching you about how a scheduler works when it is distributing jobs. A very common computer science problem. In face, right now, on the device that you are operating from, there are jobs being scheduled using very similar techniques! TMYK
+Space Elevator is essentially teaching you about how a scheduler works when it is distributing jobs. A very common computer science problem. In fact, right now, on the device that you are operating from, there are jobs being scheduled using very similar techniques! TMYK
 
 # Conclusion
 
