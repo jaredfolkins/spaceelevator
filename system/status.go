@@ -8,4 +8,6 @@ type Status struct {
 	Score            int
 	PickupTotal      int
 	DropoffTotal     int
+	PickupFloors     []int
+	DropoffFloors    []int
 }

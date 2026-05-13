@@ -84,6 +84,23 @@ func (e *Elevator) delDropoffQueue(uuid string) {
 }
 
 func (e *Elevator) MyStatus() *Status {
+	e.mu.RLock()
+	defer e.mu.RUnlock()
+
+	pickupFloors := make([]int, Floors)
+	for _, p := range e.PickupQueue {
+		if p.Passenger.CurrentFloor >= 0 && p.Passenger.CurrentFloor < Floors {
+			pickupFloors[p.Passenger.CurrentFloor]++
+		}
+	}
+
+	dropoffFloors := make([]int, Floors)
+	for _, d := range e.DropoffQueue {
+		if d.Passenger.DestinationFloor >= 0 && d.Passenger.DestinationFloor < Floors {
+			dropoffFloors[d.Passenger.DestinationFloor]++
+		}
+	}
+
 	return &Status{
 		ElevatorID:       e.ID,
 		DestinationFloor: e.DestinationFloor,
@@ -91,6 +108,8 @@ func (e *Elevator) MyStatus() *Status {
 		Direction:        e.Direction,
 		PickupTotal:      len(e.PickupQueue),
 		DropoffTotal:     len(e.DropoffQueue),
+		PickupFloors:     pickupFloors,
+		DropoffFloors:    dropoffFloors,
 	}
 }
 

@@ -2,39 +2,41 @@ package system
 
 func NearestCarScore(totalFloors int, s *Status, p *Passenger) int {
 	n := totalFloors - 1
+	d := Distance(s.CurrentFloor, p.CurrentFloor)
 	if TowardsAndSame(s, p) {
-		return (n + 2) - Distance(s.CurrentFloor, p.DestinationFloor)
+		return (n + 2) - d
 	} else if TowardsAndDiff(s, p) {
-		return (n + 1) - Distance(s.CurrentFloor, p.DestinationFloor)
+		return (n + 1) - d
 	}
-	d := Distance(s.CurrentFloor, p.DestinationFloor)
-	total := n - d
-	return total
-
+	return 1
 }
 
 func TowardsAndSame(s *Status, p *Passenger) bool {
-	if p.CurrentFloor >= s.CurrentFloor {
-		if s.Direction == Up || s.Direction == Idle {
-			return true
-		}
+	if !towardsCall(s, p) {
+		return false
 	}
-	if p.CurrentFloor <= s.CurrentFloor {
-		if s.Direction == Down || s.Direction == Idle {
-			return true
-		}
+	if s.Direction == Idle {
+		return true
 	}
-	return false
+	return s.Direction == p.Direction
 }
 
 func TowardsAndDiff(s *Status, p *Passenger) bool {
-	if p.CurrentFloor > s.CurrentFloor && s.Direction != Up {
+	if !towardsCall(s, p) || s.Direction == Idle {
+		return false
+	}
+	return s.Direction != p.Direction
+}
+
+func towardsCall(s *Status, p *Passenger) bool {
+	switch s.Direction {
+	case Up:
+		return p.CurrentFloor >= s.CurrentFloor
+	case Down:
+		return p.CurrentFloor <= s.CurrentFloor
+	default:
 		return true
 	}
-	if p.CurrentFloor < s.CurrentFloor && s.Direction != Down {
-		return true
-	}
-	return false
 }
 
 func Distance(cur, dest int) int {
