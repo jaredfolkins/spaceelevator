@@ -439,6 +439,10 @@ const Tmpl = `<!doctype html>
          --target-cell-gap: clamp(0.6px, 0.2vw, 2.2px);
       }
 
+      .shaft-frame.is-detail .activity-row {
+         border-color: rgba(245, 241, 230, 0.26);
+      }
+
       .floor-scale,
       .floor-activity {
          display: grid;
@@ -527,9 +531,26 @@ const Tmpl = `<!doctype html>
          background: rgba(245, 241, 230, 0.07);
       }
 
+      .shaft-frame.is-detail .lift-cell {
+         outline: 1px solid rgba(245, 241, 230, 0.16);
+         outline-offset: -1px;
+      }
+
+      .shaft-frame.is-detail .lift-cell:nth-child(10n) {
+         outline-color: rgba(231, 183, 95, 0.58);
+      }
+
+      .shaft-frame.is-detail .lift-cell:nth-child(100n + 1) {
+         outline-color: rgba(98, 214, 206, 0.62);
+      }
+
       .lift-cell.is-idle {
          background: var(--paper);
          box-shadow: 0 0 9px rgba(245, 241, 230, 0.52);
+      }
+
+      .shaft-frame.is-detail .lift-cell.is-idle {
+         box-shadow: 0 0 12px rgba(245, 241, 230, 0.72);
       }
 
       .lift-cell.is-up {
@@ -537,9 +558,17 @@ const Tmpl = `<!doctype html>
          box-shadow: 0 0 10px rgba(106, 167, 255, 0.7);
       }
 
+      .shaft-frame.is-detail .lift-cell.is-up {
+         box-shadow: 0 0 14px rgba(106, 167, 255, 0.9);
+      }
+
       .lift-cell.is-down {
          background: linear-gradient(180deg, #fff0c7, var(--amber) 42%, #9a4d15);
          box-shadow: 0 0 10px rgba(231, 183, 95, 0.68);
+      }
+
+      .shaft-frame.is-detail .lift-cell.is-down {
+         box-shadow: 0 0 14px rgba(231, 183, 95, 0.88);
       }
 
       .legend {
