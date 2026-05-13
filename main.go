@@ -443,6 +443,10 @@ const Tmpl = `<!doctype html>
          border-color: rgba(245, 241, 230, 0.26);
       }
 
+      .shaft-frame.is-detail .activity-row.is-empty {
+         opacity: 0.68;
+      }
+
       .floor-scale,
       .floor-activity {
          display: grid;
@@ -536,12 +540,24 @@ const Tmpl = `<!doctype html>
          outline-offset: -1px;
       }
 
+      .shaft-frame.is-detail .lift-cell.is-empty {
+         background: rgba(245, 241, 230, 0.12);
+      }
+
       .shaft-frame.is-detail .lift-cell:nth-child(10n) {
          outline-color: rgba(231, 183, 95, 0.58);
       }
 
+      .shaft-frame.is-detail .lift-cell:nth-child(10n).is-empty {
+         background: rgba(231, 183, 95, 0.2);
+      }
+
       .shaft-frame.is-detail .lift-cell:nth-child(100n + 1) {
          outline-color: rgba(98, 214, 206, 0.62);
+      }
+
+      .shaft-frame.is-detail .lift-cell:nth-child(100n + 1).is-empty {
+         background: rgba(98, 214, 206, 0.2);
       }
 
       .lift-cell.is-idle {
